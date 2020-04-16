@@ -6,7 +6,7 @@ if(isset($_GET['text'])){
 $a = $_GET['text'];
 $id = $_GET['id'];
 header('content-type: image/jpg');
-$img = imagecreatefromjpeg('rasm/4.jpg');
+$img = imagecreatefromjpeg('4.jpg');
 $font = "font.ttf"; 
 $white = imagecolorallocate($img, 255, 255, 255);
 
