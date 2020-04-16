@@ -1,58 +1,10 @@
 <?php
-define('API_KEY','1227858957:AAEIg6dS6aZcIVkmSf14VegzD_9z78jcy9k');
+define('API_KEY','1297794420:AAGqPUEDc0rkogT36ocpaYdI4MDCQKYdOkE');
 $admin = "621617473";
 $kanal = "-1001153541413";
 
 
-function joinchat($from){
-     global $message_id;
-     $gett = bot('getChatMember',[
-  'chat_id' =>"-1001153541413",
-  'user_id' => $from,
-  ]);
-  $stat = $gett->result->status;
-$tit = $gett->result->title;
-$rets = bot("getChatMember",[
-         "chat_id"=>"-1001191889714",
-         "user_id"=>$from,
-         ]);
-$stats = $rets->result->status;
-$tite = $rets->result->title;
-$retus = bot("getChatMember",[
-         "chat_id"=>"-1001411695209",
-         "user_id"=>$from,
-         ]);
-$status = $retus->result->status;
-if((($stat=="creator" or $stat=="administrator" or $stat=="member") and ($stats=="creator" or $stats=="administrator" or $stats=="member") and ($status=="creator" or $status=="administrator" or $status=="member"))){
-      return true;
-         }else{
-           bot('deleteMessage',[
-'chat_id'=>$from,
-'message_id'=>$mid-2,
-]);
-bot('sendphoto',[
-'photo'=>"https://t.me/hacker_progi/53641",
-         "chat_id"=>$from,
-         "caption"=>"<b>🤖: Men orqali ismingiz ajoyib rasmga joylashingiz mumkin
 
-Foydalanishdan avval quyidagi kanallarga obuna bo'ling aks holda bot ishlamaydi❗️
-
-Agar kanallardan chiqib ketsangiz bot ishlamay qoladi shuning uchun kanalni tark etmang❗</b>",
-         'parse_mode'=>'html',
-         "reply_to_message_id"=>$mid,
-"reply_markup"=>json_encode([
-"inline_keyboard"=>[
-[["text"=>"➕Azo bo'lish","url"=>"https://t.me/joinchat/AAAAAETBpSWxAFjppkDCow"]],
-[['text'=>"➕Azo bo'lish ",'url'=>"https://t.me/joinchat/AAAAAEcKyzKaJ-UAP7flIg"]],
-[["text"=>"➕ A‘zo bo‘lish","url"=>"https://t.me/joinchat/AAAAAFQkwmn4ec80vRCkKQ"]],
-[["text"=>"✅ Tasdiqlash","callback_data"=>"join"]],
-]
-]),
-]);  
- 
-return false;
-}
-}
 
 function bot($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
@@ -202,7 +154,7 @@ bot ('SendMessage', [
 }
 
 if($text=="/start"){
-	if(joinchat($uid)=="true"){
+	
 bot('sendphoto',[
 'photo'=>"https://t.me/hacker_progi/53642",
     'chat_id'=>$cid,
@@ -213,7 +165,8 @@ Buning uchun pastdagi bolimlarni birini tanlang*👇",
     'reply_markup'=>$key,
     ]);
 }
-}
+
+
 
 if($text== $otex){
 unlink("data/$cid.step");
@@ -225,7 +178,7 @@ bot('sendMessage', [
 ]);
 }
 if($text == "👫Juftli rasm👫"){
-if(joinchat($uid)=="true"){
+
 bot('sendphoto', [
 'chat_id' => $cid,
 'photo'=>"https://t.me/hacker_progi/53638",
@@ -239,7 +192,7 @@ bot('sendphoto', [
 ]),
 ]);
 }
-}
+
 if ($data == "juft1"){
 file_put_contents("data/$cid2.step","juft1");
 bot ('sendmessage', [
@@ -263,7 +216,7 @@ if($command == "juft1"){
 }else{
 bot('sendphoto', [
 'chat_id' => $cid,
-'photo'=>"Code96.zadc.ru/multik/juft2.php?text=$text",
+'photo'=>"https://github.com/coderchik06/co/blob/master/juft2.php?text=$text",
 'caption'=>"📋*Buyurtma*: *$text*
 
 ➡ [Dardlarim...😕](https://t.me/joinchat/AAAAAETBpSWxAFjppkDCow) ⬅
@@ -309,7 +262,7 @@ if($command == "juft2"){
 }else{
 bot('sendphoto', [
 'chat_id' => $cid,
-'photo'=>"Code96.zadc.ru/multik/juft1.php?text=$text",
+'photo'=>"https://github.com/coderchik06/co/blob/master/juft1.php?text=$text",
 'caption'=>"📋*Buyurtma*: *$text*
 
 ➡ [Dardlarim...😕](https://t.me/joinchat/AAAAAETBpSWxAFjppkDCow) ⬅
@@ -333,7 +286,6 @@ unlink("data/goto.jpg");
 }
 
 if($text == "👨‍💼Yakkali rasm👩‍💼"){
-if(joinchat($uid)=="true"){
 bot('sendphoto', [
 'chat_id' => $cid,
 'photo'=>"https://t.me/hacker_progi/53639",
@@ -348,7 +300,7 @@ bot('sendphoto', [
 ]),
 ]);
 }
-}
+
 
 if ($data == "yakka1"){
 file_put_contents("data/$cid2.step","yakka1");
@@ -371,7 +323,7 @@ if($command == "yakka1"){
 }else{
 bot('sendphoto', [
 'chat_id' => $cid,
-'photo'=>"Code96.zadc.ru/multik/toq1.php?text=$text",
+'photo'=>"https://github.com/coderchik06/co/blob/master/toq1.php?text=$text",
 'caption'=>"📋*Buyurtma*: **$text**
 
 ➡ [Dardlarim...😕](https://t.me/joinchat/AAAAAETBpSWxAFjppkDCow) ⬅
@@ -414,7 +366,7 @@ if($command == "yakka2"){
 }else{
 bot('sendphoto', [
 'chat_id' => $cid,
-'photo'=>"Code96.zadc.ru/multik/toq2.php?text=$text",
+'photo'=>"https://github.com/coderchik06/co/blob/master/toq2.php?text=$text",
 'caption'=>"📋*Buyurtma*: **$text**
 
 ➡ [Dardlarim...😕](https://t.me/joinchat/AAAAAETBpSWxAFjppkDCow) ⬅
@@ -457,7 +409,7 @@ if($command == "yakka3"){
 }else{
 bot('sendphoto', [
 'chat_id' => $cid,
-'photo'=>"Code96.zadc.ru/multik/toq3.php?text=$text",
+'photo'=>"https://github.com/coderchik06/co/blob/master/toq3.php?text=$text",
 'caption'=>"📋*Buyurtma*: **$text**
 
 ➡ [Dardlarim...😕](https://t.me/joinchat/AAAAAETBpSWxAFjppkDCow) ⬅
@@ -500,7 +452,7 @@ if($command == "yakka4"){
 }else{
 bot('sendphoto', [
 'chat_id' => $cid,
-'photo'=>"Code96.zadc.ru/multik/toq4.php?text=$text",
+'photo'=>"https://github.com/coderchik06/co/blob/master/toq4.php?text=$text",
 'caption'=>"📋*Buyurtma*: **$text**
 
 ➡ [Dardlarim...😕](https://t.me/joinchat/AAAAAETBpSWxAFjppkDCow) ⬅
@@ -523,7 +475,7 @@ unlink("data/goto.jpg");
 }
 }
 if($text == "Statistika📊"){
-if(joinchat($uid)=="true"){
+
 $vaq = date("⏰H:i  📅d_m_Y",strtotime("2 hour"));
 $baza = file_get_contents("CoDeR.ids");
 $us = substr_count($baza,"\n"); 
@@ -539,7 +491,7 @@ bot('sendMessage',[
      'text'=>"*🔹Botimiz Azolari👥: * [$cou] *ta!*\n 🔹 [$vaq]",
      'parse_mode'=>'markdown',
      ]);
-     }} 
+     }
      
      if($text == "Bekor qilish⛔"&&$cid==$admin){
       bot('sendmessage',[
